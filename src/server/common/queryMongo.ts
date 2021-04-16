@@ -1,8 +1,12 @@
 import { Cursor, MongoClient } from 'mongodb';
 import option from '../config';
 
-let res: Cursor<any>;
-const runMongo = async (collection: string, query: {} = {}) => {
+export type Query = {
+  [key: string]: number | string;
+};
+
+export let res: Cursor<any>;
+export const runMongo = async (collection: string, query: Query = {}) => {
   const client = new MongoClient(option.db_url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -12,12 +16,9 @@ const runMongo = async (collection: string, query: {} = {}) => {
     const database = client.db('guguMall');
     const multidata = database.collection(collection);
     res = await multidata.findOne(query);
-    console.log(res);
   } catch (err) {
     console.log(err);
   } finally {
     await client.close();
   }
 };
-
-export { res, runMongo };
