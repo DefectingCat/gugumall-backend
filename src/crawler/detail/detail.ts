@@ -40,28 +40,6 @@ const runMongo = async (collection: string) => {
   }
 };
 
-// 写入
-const writeMongo = async (data: AxiosResponse<any>[]) => {
-  const client = new MongoClient(option.db_url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  try {
-    await client.connect();
-    const database = client.db('guguMall');
-    const col = database.collection('detail');
-
-    const result = await col.insertMany(data);
-    console.log(
-      `${result.insertedCount} documents were inserted with the _id: ${result.insertedIds}`
-    );
-  } catch (err) {
-    console.log(err);
-  } finally {
-    await client.close();
-  }
-};
-
 // 对 iid 再进行一次过滤
 let iids: string[] = [];
 const storeResult = async (cate: string) => {

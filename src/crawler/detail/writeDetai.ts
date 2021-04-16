@@ -25,6 +25,7 @@ const writeMongo = async (data: string[]) => {
   }
 };
 
+// 删除自带的 _id
 const modifyFile = async (path: string, data: string) => {
   const reg = /\"_id\"\:\"[A-Za-z0-9]*\",/g;
   const newFile = data.replaceAll(reg, '');
