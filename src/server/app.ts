@@ -10,4 +10,4 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.listen(option.port);
-console.log('⚡[server]: running on 3000!');
+console.log(`⚡[server]: running on ${option.port}!`);
