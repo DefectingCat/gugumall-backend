@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "build": "tsc",
+    "start": "node ./dist/server/app.js"
   },
   "name": "gugumall-backend",
   "version": "1.0.0",
