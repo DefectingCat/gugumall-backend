@@ -61,7 +61,7 @@ const createDetail = async (cate: string) => {
     let endTime = startTime;
     // 同步延迟 500ms
     // 尽量对服务器温柔一点
-    while (endTime - startTime < 150) {
+    while (endTime - startTime < 500) {
       endTime = Date.now();
     }
     const res = await request({

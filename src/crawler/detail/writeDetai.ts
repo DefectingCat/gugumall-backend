@@ -38,6 +38,6 @@ const openFile = async (cate: string) => {
   // modifyFile(filePath, res);
   await writeMongo(JSON.parse(res));
 };
-openFile('new');
-openFile('pop');
-openFile('sell');
+// openFile('new');
+// openFile('pop');
+// openFile('sell');
