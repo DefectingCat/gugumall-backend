@@ -6,7 +6,7 @@ export type Query = {
 };
 export type ManyQuery = Query[];
 
-export let res: Cursor<any>;
+export let res: Cursor<any> | string;
 export let manyRes: ManyQuery = [];
 export const runMongo = async (
   collection: string,
@@ -26,11 +26,13 @@ export const runMongo = async (
       // print a message if no documents were found
       if ((await cursor.count()) === 0) {
         console.log('No documents found!');
+        res = '未查询到数据::>_<::';
       }
       // 保存查询的结果
       await cursor.forEach((x) => manyRes.push(x));
     } else {
       res = await col.findOne(query);
+      res ? void 0 : (res = '未查询到数据::>_<::');
     }
   } catch (err) {
     console.log(err);
