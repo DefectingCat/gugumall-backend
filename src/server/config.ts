@@ -1,5 +1,5 @@
 const option = {
-  db_url: 'mongodb://127.0.0.1/',
-  port: 3000,
+  db_url: 'mongodb://mongo/',
+  port: 80,
 };
 export default option;

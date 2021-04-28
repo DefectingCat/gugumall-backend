@@ -5,7 +5,6 @@ const detail = async (ctx: Context) => {
   // query 传递的参数
   const iid = ctx.query.iid;
   let query: Query;
-  // 类型转换，查询时 page 应该为 number
   if (typeof iid === 'string') {
     query = {
       iid,
