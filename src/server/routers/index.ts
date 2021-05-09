@@ -8,11 +8,11 @@ import subCategory from '../controllers/category/subCategory';
 
 const router = new Router();
 
-router.get('/gugu/home/multidata', multidata);
-router.get('/gugu/home/data', data);
-router.get('/gugu/detail', detail);
-router.get('/gugu/category', category);
-router.get('/gugu/subCategory', subCategory);
-router.get('/gugu/recommend', recommend);
+router.get('/home/multidata', multidata);
+router.get('/home/data', data);
+router.get('/detail', detail);
+router.get('/category', category);
+router.get('/subCategory', subCategory);
+router.get('/recommend', recommend);
 
 export default router;
