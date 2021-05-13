@@ -1,6 +1,6 @@
 import { Context } from 'koa';
 
-export async function cors(ctx: Context, next: () => void) {
+export async function cors(ctx: Context, next: () => Promise<unknown>) {
   // 允许来自所有域名请求
   ctx.set('Access-Control-Allow-Origin', '*');
   // 这样就能只允许 http://localhost:8080 这个域名的请求了
